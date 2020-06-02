@@ -1,0 +1,6 @@
+---
+version: 1
+applications:
+- name: TestMYAPP
+  memory: 512M
+  instances: 1
