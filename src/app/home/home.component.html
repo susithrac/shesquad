@@ -1,0 +1,19 @@
+<h1>Hackathon</h1>
+<nav mat-tab-nav-bar>
+    <a mat-tab-link routerLinkActive #rla1="routerLinkActive" [routerLinkActiveOptions]="{exact:true}"
+    [active]="rla1.isActive" routerLink="/home/booking">Manage Booking</a>
+    <a mat-tab-link routerLinkActive #rla2="routerLinkActive" [routerLinkActiveOptions]="{exact:true}"
+    [active]="rla2.isActive" routerLink="/home/profile">Profile</a>
+</nav>
+
+<!-- <nav mat-tab-nav-bar>
+  <a mat-tab-link
+     *ngFor="let link of navLinks"
+     [routerLink]="link.path"
+     routerLinkActive #rla="routerLinkActive"
+     [active]="rla.isActive">
+    {{link.label}}
+  </a>
+</nav> -->
+
+<router-outlet></router-outlet>
