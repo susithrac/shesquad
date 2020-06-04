@@ -1,12 +1,22 @@
-<form class="example-form">
-  <mat-form-field class="example-full-width">
-    <mat-label>User Name</mat-label>
-    <input matInput placeholder="Email Id">
-  </mat-form-field>
+<div class="session">
+    <div class="left">
+    </div>
+    <form action="" class="log-in" autocomplete="off">
+        <div style="width: 100%;">
+            <h4>Smart Desk<span> Reservation</span></h4>
+        </div>
 
-  <mat-form-field class="example-full-width">
-    <mat-label>Password</mat-label>
-    <input matInput type="password">
-  </mat-form-field>
-  <button type="button" (click)="submitHandler($event)" mat-raised-button color="primary">Submit</button>
-</form>
+        <mat-form-field class="example-full-width">
+            <mat-label>User Name</mat-label>
+            <input matInput placeholder="Email Id">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Password" type="password">
+        </mat-form-field>
+
+        <button type="button" (click)="submitHandler($event)" mat-raised-button color="primary">Log in</button>
+        <!-- <a href="https://codepen.io/elujambio/pen/yjwzGP" class="discrete" target="_blank">Forgot Password</a> -->
+    </form>
+</div>
