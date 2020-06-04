@@ -1,12 +1,12 @@
-<form class="example-form">
+<form #f="ngForm" (ngSubmit)="submitHandler(f.value)" class="example-form">
   <mat-form-field class="example-full-width">
     <mat-label>User Name</mat-label>
-    <input matInput placeholder="Email Id">
+    <input matInput ngModel="email" name="email" placeholder="Email Id">
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
     <mat-label>Password</mat-label>
-    <input matInput type="password">
+    <input matInput ngModel="password" name="password" type="password">
   </mat-form-field>
-  <button type="button" (click)="submitHandler($event)" mat-raised-button color="primary">Submit</button>
+  <button type="submit" mat-raised-button color="primary">Submit</button>
 </form>
