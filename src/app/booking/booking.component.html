@@ -1,6 +1,13 @@
-<h2 style="color:darkblue;text-align:center;"><b>FLOOR LAYOUT | </b><i style="font-weight:100;font-size:14px;">PLEASE SELECT A SEAT</i></h2>
 
-<table>
+<div *ngIf='!showBookingPage'>
+<h2 style="color:darkblue;text-align:center;"><b>FLOOR LAYOUT | </b><i style="font-weight:100;font-size:14px;">PLEASE SELECT A SEAT</i></h2>
+<section>
+    <div class="example-button-row">
+            <button mat-raised-button color="primary" (click)='showBookingFun()'>Book Now</button>
+    </div>
+  </section>
+
+<table >
     <tr><td></td>
         <td></td>
         <td></td>
@@ -8197,3 +8204,75 @@
         <td></td>
     </tr>
 </table>
+</div>
+
+
+
+<div class="managebooking-form-fill" *ngIf='showBookingPage'>
+    <div class="managebooking-form-fill-child greyBackground">
+       <mat-card>
+        <mat-card-content>
+           <mat-card-title><b>Status: </b></mat-card-title> 
+       
+        <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Floor Number</mat-label>
+            <input matInput placeholder="Floor Number Selected">
+        </mat-form-field>
+        </p>
+
+        <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Desk Number</mat-label>
+            <input matInput placeholder="Desk Number Selected">
+        </mat-form-field>
+        </p>
+
+        <p>
+        <mat-form-field>
+            <mat-label>Booking Date</mat-label>
+            <input matInput [matDatepicker]="dp3" disabled>
+            <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+            <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+        </mat-form-field>
+        </p>
+
+        <p>
+        <mat-form-field>
+            <mat-label><b>Duration</b></mat-label>
+            <input matInput value=" 1 Day " disabled>
+        </mat-form-field>
+        </p>
+
+        <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Booked By</mat-label>
+            <input matInput placeholder="Person Name Booked By">
+        </mat-form-field>
+        </p>
+
+
+        <p>
+        <mat-form-field>
+            <mat-label><b>Booked On </b></mat-label>
+            <input matInput value={{todayDate}} disabled>
+        </mat-form-field>
+        </p>
+
+        <p>Current time: {{todayDate}}</p>
+
+        <section>
+            <div class="example-label"></div>
+                <div class="example-button-row">
+                    <button mat-raised-button color="primary" matTooltip="Use to Rebook overriding previously done Booking"
+                            aria-label="Button that displays a tooltip when focused or hovered over">Release Booking</button>
+                    <button mat-raised-button color="accent" matTooltip="Use to Submit the Chosen Configuration"
+                            aria-label="Button that displays a tooltip when focused or hovered over" (click)="openSnackBar()">Submit</button>
+                    <button mat-raised-button color="warn" matTooltip="Use to Cancel the Previously Done Booking"
+                            aria-label="Button that displays a tooltip when focused or hovered over">Cancel</button>
+                </div>
+        </section>
+        </mat-card-content>
+    </mat-card>
+    </div>
+</div>

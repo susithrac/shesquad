@@ -1,3 +1,48 @@
+.managebooking-form-fill{
+  text-align: center;
+}
+
+.managebooking-form-fill-child{
+  display: inline-block;
+ }
+
+section {
+  display: table;
+  margin: 8px;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+}
+
+.example-button-row button {
+  display: table-cell;
+  margin-right: 8px;
+}
+
+.example-month-picker .mat-calendar-period-button {
+  pointer-events: none;
+}
+
+.example-month-picker .mat-calendar-arrow {
+  display: none;
+}
+
+mat-form-field {
+  margin-right: 12px;
+}
+
+
+/* ********************************* */
+
+
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
