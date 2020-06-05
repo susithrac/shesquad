@@ -1,0 +1,5 @@
+.mat-tab-nav-bar a:hover,
+.mat-tab-nav-bar a:focus {
+    color: #23527c;
+    text-decoration: none;
+}

@@ -1,109 +1,144 @@
-.managebooking-form-fill{
-  text-align: center;
+.managebooking-form-fill {
+    text-align: center;
 }
 
-.managebooking-form-fill-child{
-  display: inline-block;
- }
+.managebooking-form-fill-child {
+    display: inline-block;
+}
 
 section {
-  display: table;
-  margin: 8px;
+    display: table;
+    margin: 8px;
 }
 
 .example-label {
-  display: table-cell;
-  font-size: 14px;
-  margin-left: 8px;
-  width: 120px;
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    width: 120px;
 }
 
 .example-button-row {
-  display: table-cell;
+    display: table-cell;
 }
 
 .example-button-row button {
-  display: table-cell;
-  margin-right: 8px;
+    display: table-cell;
+    margin-right: 8px;
 }
 
 .example-month-picker .mat-calendar-period-button {
-  pointer-events: none;
+    pointer-events: none;
 }
 
 .example-month-picker .mat-calendar-arrow {
-  display: none;
+    display: none;
 }
 
 mat-form-field {
-  margin-right: 12px;
+    margin-right: 12px;
+}
+
+.mat-raised-button.mat-primary {
+    width: auto;
+    min-width: 100px;
+    border-radius: 24px;
+    text-align: center;
+    padding: 5px 5px;
+    margin-top: 5px;
+    background-color: #673ab7;
+    color: #fff;
+    font-size: 14px;
+    margin-left: auto;
+    font-weight: 500;
+    box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.13);
+    border: none;
+    transition: all 0.3s ease;
+    outline: 0;
+}
+
+.mat-raised-button.mat-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 2px 6px -1px rgba(182, 157, 230, 0.65);
+}
+
+.mat-raised-button.mat-primary:hover:active {
+    transform: scale(0.99);
 }
 
 
 /* ********************************* */
-
 
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
     border: 10px solid black;
-  }
-  
-  td, th {
+}
+
+td,
+th {
     /* border: 1px solid #dddddd; */
     padding: 8px;
     background-color: #fcfeff;
-  }
-  
-  /* for radio buttons */
-  input[type="radio"] {
+}
+
+
+/* for radio buttons */
+
+input[type="radio"] {
     position: absolute;
     opacity: 0;
-  }
-  input[type="radio"]:checked + label {
+}
+
+input[type="radio"]:checked+label {
     background: #bada55;
     -webkit-animation-name: rubberBand;
     animation-name: rubberBand;
     animation-duration: 300ms;
     animation-fill-mode: both;
-  }
-  input[type="radio"]:disabled + label {
+}
+
+input[type="radio"]:disabled+label {
     background: #dddddd;
     text-indent: -9999px;
     overflow: hidden;
-  }
-  input[type="radio"]::after {
+}
+
+input[type="radio"]::after {
     content: "X";
     text-indent: 0;
     position: absolute;
     top: 4px;
     left: 50%;
     transform: translate(-50%, 0%);
-  }
-  input[type="radio"]:hover {
+}
+
+input[type="radio"]:hover {
     box-shadow: none;
     cursor: not-allowed;
-  }
-  input[type="radio"] {
+}
+
+input[type="radio"] {
     visibility: hidden;
-  }
-  
-  input[type="checkbox"] {
+}
+
+input[type="checkbox"] {
     position: absolute;
     opacity: 0;
-  }
-  input[type="checkbox"]:disabled + label {
+}
+
+input[type="checkbox"]:disabled+label {
     background: #dddddd;
     text-indent: -9999px;
     overflow: hidden;
     cursor: text;
     box-shadow: none;
     border-radius: 0px;
-  /*    border: 1px solid black;*/
-  }
-  
-  label {
+    /*    border: 1px solid black;*/
+}
+
+label {
     display: block;
     position: relative;
     width: 100%;
@@ -116,8 +151,9 @@ table {
     border-radius: 5px;
     animation-duration: 300ms;
     animation-fill-mode: both;
-  }
-  label::before {
+}
+
+label::before {
     content: "";
     position: absolute;
     width: 75%;
@@ -127,189 +163,183 @@ table {
     transform: translate(-50%, 0%);
     background: rgba(255, 255, 255, 0.4);
     border-radius: 3px;
-  }
-  label:hover {
+}
+
+label:hover {
     cursor: pointer;
     box-shadow: 0 0 0px 2px #5c6aff;
-  }
-  
-  @-webkit-keyframes rubberBand {
+}
+
+@-webkit-keyframes rubberBand {
     0% {
         -webkit-transform: scale3d(1, 1, 1);
         transform: scale3d(1, 1, 1);
     }
-  
     30% {
         -webkit-transform: scale3d(1.25, 0.75, 1);
         transform: scale3d(1.25, 0.75, 1);
     }
-  
     40% {
         -webkit-transform: scale3d(0.75, 1.25, 1);
         transform: scale3d(0.75, 1.25, 1);
     }
-  
     50% {
         -webkit-transform: scale3d(1.15, 0.85, 1);
         transform: scale3d(1.15, 0.85, 1);
     }
-  
     65% {
         -webkit-transform: scale3d(0.95, 1.05, 1);
         transform: scale3d(0.95, 1.05, 1);
     }
-  
     75% {
         -webkit-transform: scale3d(1.05, 0.95, 1);
         transform: scale3d(1.05, 0.95, 1);
     }
-  
     100% {
         -webkit-transform: scale3d(1, 1, 1);
         transform: scale3d(1, 1, 1);
     }
-  }
-  @keyframes rubberBand {
+}
+
+@keyframes rubberBand {
     0% {
         -webkit-transform: scale3d(1, 1, 1);
         transform: scale3d(1, 1, 1);
     }
-  
     30% {
         -webkit-transform: scale3d(1.25, 0.75, 1);
         transform: scale3d(1.25, 0.75, 1);
     }
-  
     40% {
         -webkit-transform: scale3d(0.75, 1.25, 1);
         transform: scale3d(0.75, 1.25, 1);
     }
-  
     50% {
         -webkit-transform: scale3d(1.15, 0.85, 1);
         transform: scale3d(1.15, 0.85, 1);
     }
-  
     65% {
         -webkit-transform: scale3d(0.95, 1.05, 1);
         transform: scale3d(0.95, 1.05, 1);
     }
-  
     75% {
         -webkit-transform: scale3d(1.05, 0.95, 1);
         transform: scale3d(1.05, 0.95, 1);
     }
-  
     100% {
         -webkit-transform: scale3d(1, 1, 1);
         transform: scale3d(1, 1, 1);
     }
-  }
-  .rubberBand {
+}
+
+.rubberBand {
     -webkit-animation-name: rubberBand;
     animation-name: rubberBand;
-  }
-  
-  .seatStylingUp {
+}
+
+.seatStylingUp {
     padding: 20px 40px 0px 40px;
-  }
-  .seatStylingDown {
+}
+
+.seatStylingDown {
     padding: 0px 40px 20px 40px;
-  }
-  .tableStyling {
-    padding:0px;
-    width:5px;
-  }
-  
-  .seatStylingUp label {
+}
+
+.tableStyling {
+    padding: 0px;
+    width: 5px;
+}
+
+.seatStylingUp label {
     padding: 4px 4px;
-  }
-  .seatStylingDown label {
+}
+
+.seatStylingDown label {
     padding: 4px 4px;
-  }
-  
-  .blueBackground {
-    background-color:steelblue;
+}
+
+.blueBackground {
+    background-color: steelblue;
     border: 1px solid steelblue;
-  }
-  
-  .redBackground {
+}
+
+.redBackground {
     background-color: #f42356;
     border: 1px solid #f42356;
-  }
-  
-  .blackBackground {
-    background-color:black;
+}
+
+.blackBackground {
+    background-color: black;
     border: 1px solid black;
-  }
-  
-  .greyBackground {
+}
+
+.greyBackground {
     background-color: dimgrey;
     border: 1px solid dimgrey;
-  }
-  
-  .darkGreenBackground {
+}
+
+.darkGreenBackground {
     background-color: green;
     border: 1px solid green;
-  }
-  
-  .brownBackground {
-    background-color:saddlebrown;
+}
+
+.brownBackground {
+    background-color: saddlebrown;
     border: 1px solid saddlebrown;
-  }
-  
-  .whiteBackground { 
+}
+
+.whiteBackground {
     background-color: white;
     border: 1px solid white;
-  }
-  
-  .yellowBackground {
+}
+
+.yellowBackground {
     background-color: goldenrod;
     border: 1px solid goldenrod;
-  }
-  
-  .borderBlack {
+}
+
+.borderBlack {
     border: 3px solid black;
-  }
-  
-  .borderBlackTop {
+}
+
+.borderBlackTop {
     border-top: 3px solid black;
-  }
-  
-  .borderBlackBottom {
+}
+
+.borderBlackBottom {
     border-bottom: 3px solid black;
-  }
-  
-  .borderBlackRight {
+}
+
+.borderBlackRight {
     border-right: 3px solid black;
-  }
-  
-  .borderBlackLeft {
+}
+
+.borderBlackLeft {
     border-left: 3px solid black;
-  }
-  
-  .whiteBox {
+}
+
+.whiteBox {
     background-color: white;
     width: 40px;
     height: 34px;
-  }
-  
-  .blackBox {
+}
+
+.blackBox {
     height: 20px;
     background-color: white;
     border: 2px solid black;
-  }
-  
-  .blueBox {
+}
+
+.blueBox {
     height: 20px;
     background-color: white;
-  }
-  
-  .borderGreyRight {
+}
+
+.borderGreyRight {
     border-right: 2px solid grey;
-  }
-  
-  .lightGreyBackground {
+}
+
+.lightGreyBackground {
     background-color: lightgray;
     border: 1px solid lightgray;
-  }
+}

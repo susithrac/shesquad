@@ -67,7 +67,7 @@ button {
     text-align: center;
     padding: 15px 40px;
     margin-top: 5px;
-    background-color: #b08bf8;
+    background-color: #673ab7;
     color: #fff;
     font-size: 14px;
     margin-left: auto;
@@ -114,7 +114,7 @@ button:hover:active {
 }
 
 .mat-raised-button.mat-primary {
-    background-color: #3498db;
+    background-color: #673ab7;
     padding: 5px 5px;
 }
 
