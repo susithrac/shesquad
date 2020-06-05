@@ -1,22 +1,24 @@
-<div class="session">
-    <div class="left">
-    </div>
-    <form #f="ngForm" (ngSubmit)="submitHandler(f.value)" class="log-in" autocomplete="off">
-        <div style="width: 100%;">
-            <h4>Smart Desk<span> Reservation</span></h4>
+<div>
+    <div class="session">
+        <div class="left">
         </div>
+        <form #f="ngForm" (ngSubmit)="submitHandler(f.value)" class="log-in" autocomplete="off">
+            <div style="width: 100%;">
+                <h4>Smart Desk<span> Reservation</span></h4>
+            </div>
 
-        <mat-form-field class="example-full-width">
-            <mat-label>User Name</mat-label>
-            <input ngModel="email" name="email" matInput placeholder="Email Id">
-        </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>User Name</mat-label>
+                <input ngModel="email" name="email" matInput placeholder="Email Id">
+            </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-            <mat-label>Password</mat-label>
-            <input ngModel="password" name="password" matInput placeholder="Password" type="password">
-        </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Password</mat-label>
+                <input ngModel="password" name="password" matInput placeholder="Password" type="password">
+            </mat-form-field>
 
-        <button type="submit" mat-raised-button color="primary">Log in</button>
-        <!-- <a href="https://codepen.io/elujambio/pen/yjwzGP" class="discrete" target="_blank">Forgot Password</a> -->
-    </form>
+            <button type="submit" mat-raised-button color="primary">Log in</button>
+            <!-- <a href="https://codepen.io/elujambio/pen/yjwzGP" class="discrete" target="_blank">Forgot Password</a> -->
+        </form>
+    </div>
 </div>

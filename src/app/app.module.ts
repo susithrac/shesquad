@@ -14,6 +14,10 @@ import { HomeComponent } from './home/home.component';
 import { BookingComponent } from './booking/booking.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+
 import {
   MatCardModule,
   MatDatepickerModule,
@@ -29,7 +33,10 @@ import {
     HomeComponent,
     BookingComponent,
     ProfileComponent,
-    LoginComponent
+    LoginComponent,
+    WelcomeComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

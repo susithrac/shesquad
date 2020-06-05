@@ -1,0 +1,66 @@
+.setDivWidthHeight {
+    padding: 50px 50px 50px 50px;
+}
+
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+img {
+    width: 70%;
+    float: right;
+    margin-right: 13px
+}
+
+button {
+    -webkit-appearance: none;
+    width: auto;
+    min-width: 100px;
+    border-radius: 24px;
+    text-align: center;
+    padding: 15px 40px;
+    margin-top: 5px;
+    background-color: #3498db;
+    color: #fff;
+    font-size: 14px;
+    margin-left: auto;
+    font-weight: 500;
+    box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.13);
+    border: none;
+    transition: all 0.3s ease;
+    outline: 0;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 2px 6px -1px #3498db;
+}
+
+button:hover:active {
+    transform: scale(0.99);
+}
+
+;
+.mat-raised-button.mat-primary {
+    background-color: #3498db;
+    padding: 5px 5px;
+}
+
+@media only screen and (min-width: 500px) and (max-width: 991px) {
+    img {
+        margin: 0px 130px 40px auto;
+    }
+}
+
+@media only screen and (min-width: 550px) and (max-width: 700px) {
+    img {
+        margin: 0px 80px 40px auto;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    img {
+        margin: 0px 60px 40px auto;
+    }
+}
