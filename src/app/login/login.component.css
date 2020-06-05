@@ -108,7 +108,7 @@ button:hover:active {
     min-height: 100%;
     position: relative;
     background-image: url("../../assets/img/LandingPageImg1.jpg");
-    background-size: 100% 100%;
+    background-size: 420px 500px;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
 }
@@ -122,11 +122,17 @@ button:hover:active {
     .session {
         width: 500px;
     }
+    .left {
+        background-size: 420px 500px;
+    }
 }
 
 @media only screen and (min-width: 500px) and (max-width: 600px) {
     .session {
         width: 300px;
+    }
+    .left {
+        width: 0px;
     }
 }
 
