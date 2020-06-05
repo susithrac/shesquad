@@ -25,6 +25,8 @@ import {
   MatTableModule, MatToolbarModule, MatTooltipModule, MatTreeModule,MatNativeDateModule,MatExpansionModule,
   MatIconModule
 } from "@angular/material";
+import { SeatComponent } from './seat/seat.component';
+import { BookingResolver } from './booking.resolver';
 
 
 @NgModule({
@@ -36,7 +38,8 @@ import {
     LoginComponent,
     WelcomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SeatComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,7 @@ import {
     MatTableModule, MatTabsModule, MatToolbarModule, MatTooltipModule, MatTreeModule,MatNativeDateModule,MatExpansionModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [ BookingResolver ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

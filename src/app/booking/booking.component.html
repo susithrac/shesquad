@@ -365,56 +365,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td class="seatStylingUp">
-            <input type="radio" name ="radioGroup" id="1A" />
-            <label for="1A"> 1A </label>
-        </td>
-        <td></td>
-        <td class="seatStylingUp">
-            <input type="radio" name ="radioGroup" id="1B" />
-            <label for="1B">1B</label>
-        </td>
-        <td></td>
-        <td class="seatStylingUp">
-            <input type="radio" name ="radioGroup" id="1C" />
-            <label for="1C">1C</label>
-        </td>
-        <td></td>
-        <td class="seatStylingUp">
-            <input type="radio" name ="radioGroup" id="1D" />
-            <label for="1D">1D</label>
-        </td>
-        <td></td>
-        <td class="seatStylingUp">
-            <input type="radio" name ="radioGroup" id="1E" />
-            <label for="1E">1E</label>
-        </td>
-        <td></td>
-        <td class="seatStylingUp">
-            <input type="radio" name ="radioGroup" id="1F" />
-            <label for="1F">1F</label>
-        </td>
-        <td></td>
-        <td class="seatStylingUp">
-            <input type="radio" name ="radioGroup" id="1G" />
-            <label for="1G">1G</label>
-        </td>
-        <td></td>
-        <td class="seatStylingUp">
-            <input type="radio" name ="radioGroup" id="1H" />
-            <label for="1H">1H</label>
-        </td>
-        <td></td>
-        <td class="seatStylingUp">
-            <input type="radio" name ="radioGroup" id="1I" />
-            <label for="1I">1I</label>
-        </td>
-        <td></td>
-        <td class="seatStylingUp">
-            <input type="radio" name ="radioGroup" id="1J" />
-            <label for="1J">1J</label>
-        </td>
-        <td></td>
+        <app-seat *ngFor="let desk of desks" (seatSelect)="seatHandler($event)" [desk]="desk"></app-seat>
         <td></td>
         <td class="blackBackground"></td>
         <td class="blackBackground"></td>

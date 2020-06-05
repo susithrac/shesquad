@@ -5,6 +5,7 @@ import { BookingComponent } from './booking/booking.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { BookingResolver } from './booking.resolver';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
@@ -13,7 +14,9 @@ const routes: Routes = [
     path: 'home', component: HomeComponent,
     children: [
       { path: '', redirectTo: '/home/booking', pathMatch: 'full' },
-      { path: 'booking', component: BookingComponent },
+      { path: 'booking', component: BookingComponent, resolve: {
+        desks: BookingResolver
+      } },
       { path: 'profile', component: ProfileComponent }
     ]
   }

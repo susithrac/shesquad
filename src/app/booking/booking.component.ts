@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {MatBottomSheetRef} from '@angular/material/bottom-sheet';
-import {MatSnackBar} from '@angular/material/snack-bar';
-import {FormControl} from '@angular/forms';
-
-import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
-import {MatDatepicker} from '@angular/material/datepicker';
-import {MatBottomSheet} from "@angular/material";
-
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Desk } from '../booking.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-booking',
@@ -15,26 +10,36 @@ import {MatBottomSheet} from "@angular/material";
 })
 export class BookingComponent implements OnInit {
 
-showBookingPage : boolean =false;
+  showBookingPage: boolean = false;
 
-todayNumber: number = Date.now();
-  todayDate : Date = new Date();
-  todayString : string = new Date().toDateString();
-  todayISOString : string = new Date().toISOString();
+  todayNumber: number = Date.now();
+  todayDate: Date = new Date();
+  todayString: string = new Date().toDateString();
+  todayISOString: string = new Date().toISOString();
 
 
-  constructor(public snackBar: MatSnackBar) { }
+  constructor(public snackBar: MatSnackBar, 
+    private route: ActivatedRoute) { 
+    
+  }
+ 
   openSnackBar() {
     this.snackBar.open("Booking Successfully Submitted.", "close", {
       duration: 2000,
     });
   }
-
+  desks:Array<Desk>;
   ngOnInit() {
+    this.desks = this.route.snapshot.data['desks'];
   }
 
-showBookingFun():void{
-  this.showBookingPage = !this.showBookingPage
-}
+  showBookingFun(): void {
+    this.showBookingPage = !this.showBookingPage
+  }
+
+  seatHandler(data:Desk){
+    console.log("Got the data");
+    console.log(data);
+  }
 
 }
