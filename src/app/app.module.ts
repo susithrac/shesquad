@@ -18,7 +18,8 @@ import {
   MatCardModule,
   MatDatepickerModule,
   MatSnackBarModule,
-  MatTableModule, MatToolbarModule, MatTooltipModule, MatTreeModule,MatNativeDateModule
+  MatTableModule, MatToolbarModule, MatTooltipModule, MatTreeModule,MatNativeDateModule,MatExpansionModule,
+  MatIconModule
 } from "@angular/material";
 
 
@@ -42,7 +43,8 @@ import {
     MatCardModule,
     MatDatepickerModule,
     MatSnackBarModule,
-    MatTableModule, MatTabsModule, MatToolbarModule, MatTooltipModule, MatTreeModule,MatNativeDateModule
+    MatTableModule, MatTabsModule, MatToolbarModule, MatTooltipModule, MatTreeModule,MatNativeDateModule,MatExpansionModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
