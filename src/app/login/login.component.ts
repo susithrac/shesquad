@@ -14,13 +14,13 @@ export class LoginComponent implements OnInit {
   submitHandler(form){
       event.preventDefault();
       let encryptedPassword = CryptoJS.AES.encrypt(form.password, 'secret key 123').toString();
-      this.loginService.validateUser(form.email, encryptedPassword).subscribe(function(response){
-        console.log(response);
+      this.loginService.validateUser(form.email, encryptedPassword).subscribe(
+        data => {
+          let name=data.data.FirstName+" "+data.data.LastName;
+          this.router.navigate(['/home/booking',{id:name}], { relativeTo: this.route });
       });
-
-      this.router.navigate(['/home'], { relativeTo: this.route });
   }
-
+  
   ngOnInit() {
   }
 

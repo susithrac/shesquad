@@ -13,7 +13,6 @@ const routes: Routes = [
   {
     path: 'home', component: HomeComponent,
     children: [
-      { path: '', redirectTo: '/home/booking', pathMatch: 'full' },
       { path: 'booking', component: BookingComponent, resolve: {
         desks: BookingResolver
       } },
