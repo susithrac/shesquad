@@ -12,7 +12,7 @@ import * as moment from 'moment';
 export class BookingComponent implements OnInit {
 
   showBookingPage: boolean = false;
-  disableBookNowButton: boolean = true;
+  isSeatSelected: boolean = true;
   selectedDesk: Desk;
   userName: string;
   todayDate: string;
@@ -34,11 +34,15 @@ export class BookingComponent implements OnInit {
 
   showBookingFun(): void {
     this.showBookingPage = !this.showBookingPage;
+  }
 
+  releaseBooking():void {
+    this.showBookingPage = false;
+    this.isSeatSelected = true;
   }
 
   seatHandler(data: Desk) {
-    this.disableBookNowButton = false;
+    this.isSeatSelected = false;
     this.todayDate = moment(new Date()).format('MM/DD/YYYY');
 
     this.selectedDesk = data;
