@@ -1,4 +1,25 @@
-<div *ngIf='!showBookingPage'>
+<section class="positionFloorDate">
+    <mat-form-field>
+        <mat-label>Select Floor</mat-label>
+        <mat-select [(ngModel)]="floorValue">
+            <mat-option value="floor1">Floor 1</mat-option>
+            <mat-option value="floor2">Floor 2</mat-option>
+            <mat-option value="floor3">Floor 3</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="datePickerStyling">
+        <mat-label>Booking Date</mat-label>
+        <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" [(ngModel)]="dateValue">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker (selectedChanged)="selectedDate($event)"></mat-datepicker>
+    </mat-form-field>
+
+</section>
+
+
+
+<div *ngIf='!showBookingPage && dateValue && floorValue'>
     <h2 style="color:darkblue;text-align:center;"><b>FLOOR LAYOUT | </b><i style="font-weight:100;font-size:14px;">PLEASE SELECT A SEAT</i></h2>
 
     <section>
@@ -39,7 +60,7 @@
                             <mat-label>Booking Date</mat-label>
                             <input matInput [matDatepicker]="dp3" disabled>
                             <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
-                            <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+                            <mat-datepicker #dp3 disabled></mat-datepicker>
                         </mat-form-field>
                     </p>
 
@@ -50,7 +71,7 @@
                         </mat-form-field>
                     </p>
 
-                    <!-- <p>
+                    <p>
                         <mat-form-field appearance="outline">
                             <mat-label>Booked By</mat-label>
                             <input disabled matInput [(ngModel)]="userName" name="userName" placeholder="Person Name Booked By">
@@ -58,7 +79,7 @@
                     </p>
 
 
-                    <p>
+                    <!-- <p>
                         <mat-form-field>
                             <mat-label><b>Booked On </b></mat-label>
                             <input matInput value={{todayDate}} disabled>

@@ -17,6 +17,8 @@ import { LoginComponent } from './login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { MatMenuModule} from '@angular/material/menu';
+import { MatSelectModule } from '@angular/material';
 
 import {
   MatCardModule,
@@ -54,7 +56,9 @@ import { BookingResolver } from './booking.resolver';
     MatDatepickerModule,
     MatSnackBarModule,
     MatTableModule, MatTabsModule, MatToolbarModule, MatTooltipModule, MatTreeModule,MatNativeDateModule,MatExpansionModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule,
+    MatSelectModule
   ],
   providers: [ BookingResolver ],
   bootstrap: [AppComponent]

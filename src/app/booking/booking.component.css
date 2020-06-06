@@ -92,6 +92,16 @@ mat-form-field {
     transform: scale(0.99);
 }
 
+.positionFloorDate {
+    padding-left: 10px;
+    color: rgba(0, 0, 0, .87);
+    padding-top: 30px;
+}
+
+.datePickerStyling {
+    padding-left: 20px;
+}
+
 
 /* ********************************* */
 
