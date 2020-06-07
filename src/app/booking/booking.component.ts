@@ -80,5 +80,8 @@ export class BookingComponent implements OnInit {
     console.log("Got the data");
     console.log(data);
   }
+  selectedDate(date){
+    console.log(date);
+  }
 
 }
