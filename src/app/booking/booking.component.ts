@@ -21,6 +21,8 @@ export class BookingComponent implements OnInit {
   minDate: Date;
   maxDate: Date;
   employeeId: string;
+  dateValue: any;
+  floorValue:any;
 
   constructor(public snackBar: MatSnackBar,
     private route: ActivatedRoute, private bookingService:BookingService) {
