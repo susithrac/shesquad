@@ -17,9 +17,7 @@
 
 </section>
 
-
-
-<div *ngIf='!showBookingPage && dateValue && floorValue'>
+<div *ngIf="!showBookingPage && dateValue && floorValue=='floor1'">
     <h2 style="color:darkblue;text-align:center;"><b>FLOOR LAYOUT | </b><i style="font-weight:100;font-size:14px;">PLEASE SELECT A SEAT</i></h2>
 
     <section>
@@ -33,6 +31,7 @@
     </div>
 
 </div>
+<app-fullseat *ngIf="!showBookingPage && dateValue && floorValue=='floor2'"></app-fullseat>
 
 <div class="managebooking-form-fill" *ngIf='showBookingPage'>
     <div class="managebooking-form-fill-child">

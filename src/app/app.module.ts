@@ -29,6 +29,7 @@ import {
 } from "@angular/material";
 import { SeatComponent } from './seat/seat.component';
 import { BookingResolver } from './booking.resolver';
+import { FullseatComponent } from './fullseat/fullseat.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { BookingResolver } from './booking.resolver';
     WelcomeComponent,
     HeaderComponent,
     FooterComponent,
-    SeatComponent
+    SeatComponent,
+    FullseatComponent
   ],
   imports: [
     BrowserModule,
