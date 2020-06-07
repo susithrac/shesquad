@@ -3,6 +3,7 @@ import {Component,OnInit} from '@angular/core';
 import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
 import {MatIconModule} from '@angular/material/icon';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { ActivatedRoute } from '@angular/router';
 
 interface FoodNode {
   name: string;
@@ -58,8 +59,11 @@ export class ProfileComponent implements OnInit {
 
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
-  constructor() {
+  constructor( private route: ActivatedRoute) {
     this.dataSource.data = TREE_DATA;
+    const user = route.snapshot.paramMap.get('id');
+    const data = route.snapshot.paramMap.get('empId');
+    console.log(user+data);
   }
 
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
