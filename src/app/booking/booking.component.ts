@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import * as moment from 'moment';
 import { MatMenuTrigger } from '@angular/material';
 import { Router } from '@angular/router';
+import * as _ from 'underscore';
 
 @Component({
   selector: 'app-booking',
@@ -61,7 +62,8 @@ export class BookingComponent implements OnInit {
 
   desks: Array<Desk>;
   ngOnInit() {
-    this.desks = this.route.snapshot.data['desks'];
+    var desks = this.route.snapshot.data['desks'];
+    this.desks = _.sortBy(desks,'deskId');
   }
 
   showBookingFun(): void {
