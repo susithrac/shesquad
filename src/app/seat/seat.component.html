@@ -1,5 +1,5 @@
 <div class="seatTableUI">
-    <div class="seatStylingUp">{{ desk.availableForBooking }}
+    <div class="seatStylingUp">
         <input type="radio" name="radioGroup" [disabled]="!desk.availableForBooking" (change)="changeHandler(desk)" id="{{desk.deskId}}" />
         <label for="{{desk.deskId}}">{{desk.deskNo}}</label>
     </div>

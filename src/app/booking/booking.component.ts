@@ -55,7 +55,13 @@ export class BookingComponent implements OnInit {
         duration: 5000,
       });
       snackBarRef.afterDismissed().subscribe(() => {
-        this.router.navigate(['/home/profile',{id:this.userName,empId:this.employeeId}], { relativeTo: this.route , skipLocationChange: true });
+        //this.router.navigate(['/home/booking',{id:this.userName,empId:this.employeeId}], { relativeTo: this.route , skipLocationChange: true });
+        this.bookingService.getDesks().subscribe(data=>{
+          this.desks = _.sortBy(data,'deskId');
+          this.showBookingFun();
+        });
+        this.floorValue="";
+        this.dateValue="";
       });
     });
   }
