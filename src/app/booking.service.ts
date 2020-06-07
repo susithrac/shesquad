@@ -22,5 +22,8 @@ export class BookingService {
   getDesks(): Observable<Array<Desk>>{
     return this.httpClient.get(environment.url+'/desks') as Observable<Array<Desk>>;
   }
+  manageBooking(obj): Observable<any>{
+    return this.httpClient.post(environment.url+'/booking',obj);
+  }
 
 }

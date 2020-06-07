@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
       this.loginService.validateUser(form.email, encryptedPassword).subscribe(
         data => {
           let name=data.data.FirstName+" "+data.data.LastName;
-          this.router.navigate(['/home/booking',{id:name}], { relativeTo: this.route });
+          this.router.navigate(['/home/booking',{id:name,empId:data.data.EmployeeID}], { relativeTo: this.route , skipLocationChange: true });
       });
   }
   

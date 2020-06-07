@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Desk } from '../booking.service';
+import { Desk, BookingService } from '../booking.service';
 import { ActivatedRoute } from '@angular/router';
 import * as moment from 'moment';
 import { MatMenuTrigger } from '@angular/material';
@@ -20,10 +20,12 @@ export class BookingComponent implements OnInit {
   todayDate: string;
   minDate: Date;
   maxDate: Date;
+  employeeId: string;
 
   constructor(public snackBar: MatSnackBar,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute, private bookingService:BookingService) {
     this.userName = route.snapshot.paramMap.get('id');
+    this.employeeId = route.snapshot.paramMap.get('empId');
     const currentDate = new Date().getDate();
     const currentMonth = new Date().getMonth();
     const currentYear = new Date().getFullYear();
@@ -35,11 +37,25 @@ export class BookingComponent implements OnInit {
     this.trigger.openMenu();
   }
 
-  openSnackBar() {
-    this.snackBar.open("Booking Successfully Submitted.", "close", {
-      duration: 2000,
+  onSubmit() {
+    let bookObj={"booking":{
+      "bookingDate": "10/06/2020",
+      "durationID": "1D",
+      "bookedByID": this.employeeId,
+      "deskID": this.selectedDesk.deskId,
+      "createdDateTime": this.todayDate
+    }};
+    this.bookingService.manageBooking(bookObj).subscribe(data=>{
+
+      let snackBarRef = this.snackBar.open("Booking Successfully Submitted.", "close", {
+        duration: 5000,
+      });
+      snackBarRef.afterDismissed().subscribe(() => {
+        
+      });
     });
   }
+
   desks: Array<Desk>;
   ngOnInit() {
     this.desks = this.route.snapshot.data['desks'];
