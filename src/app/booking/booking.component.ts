@@ -4,6 +4,7 @@ import { Desk, BookingService } from '../booking.service';
 import { ActivatedRoute } from '@angular/router';
 import * as moment from 'moment';
 import { MatMenuTrigger } from '@angular/material';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-booking',
@@ -25,7 +26,7 @@ export class BookingComponent implements OnInit {
   floorValue:any;
 
   constructor(public snackBar: MatSnackBar,
-    private route: ActivatedRoute, private bookingService:BookingService) {
+    private route: ActivatedRoute, private bookingService:BookingService,private router: Router) {
     this.userName = route.snapshot.paramMap.get('id');
     this.employeeId = route.snapshot.paramMap.get('empId');
     const currentDate = new Date().getDate();
@@ -53,7 +54,7 @@ export class BookingComponent implements OnInit {
         duration: 5000,
       });
       snackBarRef.afterDismissed().subscribe(() => {
-        
+        this.router.navigate(['/home/profile']);
       });
     });
   }
@@ -84,4 +85,5 @@ export class BookingComponent implements OnInit {
     console.log(date);
   }
 
+  
 }
