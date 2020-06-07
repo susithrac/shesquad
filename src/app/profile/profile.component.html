@@ -14,16 +14,13 @@
                     </mat-expansion-panel-header>
 
                     <p>
-                        First Name : Apoorva
+                        User Name : {{username}}
                     </p>
                     <p>
-                        Last Name : Ambesange
+                        Department : {{deptname}}
                     </p>
                     <p>
-                        Department : GM IT
-                    </p>
-                    <p>
-                        Email : apoorva@xyz.com
+                        Email : {{email}}
                     </p>
                 </mat-expansion-panel>
 
@@ -35,10 +32,7 @@
                         </mat-panel-title>
 
                     </mat-expansion-panel-header>
-                    <p>Booking ID: 1</p>
-                    <!-- <p>Booked On: {{todayDate}}</p>
-                  <p>Booked On: {{todayISOString}}</p>-->
-                    <p>Booked On: {{todayString}}</p>
+                    
                     <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
                         <!-- This is the tree node template for leaf nodes -->
                         <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
