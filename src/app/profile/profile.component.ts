@@ -6,21 +6,12 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { ActivatedRoute } from '@angular/router';
 import { BookingService } from '../booking.service';
 
+
 interface FoodNode {
-  name: string;
+  name: String;
   children?: FoodNode[];
 }
 
-const TREE_DATA: FoodNode[] = [
-  {
-    name: 'Seat Details',
-    children: [
-      {name: 'Floor'},
-      {name: 'Department'},
-      {name: 'Seat Number'},
-    ]
-  }
-];
 
 /** Flat node with expandable and level information */
 interface ExampleFlatNode {
@@ -40,6 +31,15 @@ export class ProfileComponent implements OnInit {
   todayString : string = new Date().toDateString();
   todayISOString : string = new Date().toISOString();
   panelOpenState = false;
+  obj : any;
+  username : String;
+  deptname : String;
+  email : String;
+  floor : String;
+  dept : String;
+  seatno : String;
+  bookedOn : String;
+  duration : String;
 
   ngOnInit() {
     console.log(this.bookingService.getProfileDetails());
@@ -62,10 +62,32 @@ export class ProfileComponent implements OnInit {
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
   constructor( private route: ActivatedRoute, private bookingService: BookingService) {
+     this.obj = bookingService.getProfileDetails();
+     this.username = bookingService.getProfileDetails().userName;
+     this.deptname = bookingService.getProfileDetails().selectedDesk.departmentName;
+     this.email = bookingService.getProfileDetails().emailId;
+     this.floor = bookingService.getProfileDetails().selectedDesk.floorNo;
+     this.dept = bookingService.getProfileDetails().selectedDesk.departmentName;
+     this.seatno = bookingService.getProfileDetails().selectedDesk.deskNo;
+     this.bookedOn = bookingService.getProfileDetails().bookingObject.booking.createdDateTime;
+    this.duration = bookingService.getProfileDetails().bookingObject.booking.durationID;
+
+     const TREE_DATA: FoodNode[] = [
+      {
+        name: 'Seat Details',
+        children: [
+          {name: 'Floor : '+this.floor},
+          {name: 'Department : ' + this.dept},
+          {name: 'Seat Number : '+ this.seatno},
+          {name: 'Booked On : '+ this.bookedOn},
+         {name: 'Duration : '+ this.duration+'ay'},
+        ]
+      }
+    ];
+    
+
     this.dataSource.data = TREE_DATA;
-    const user = route.snapshot.paramMap.get('id');
-    const data = route.snapshot.paramMap.get('empId');
-    console.log(user+data);
+    
   }
 
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
