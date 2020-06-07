@@ -88,6 +88,14 @@ label:hover {
     box-shadow: 0 0 0px 2px #5c6aff;
 }
 
+input[type="radio"][disabled]:disabled+label {
+    text-indent: 0px;
+}
+
+input[type="radio"][disabled]:disbled hover {
+    cursor: not-allowed;
+}
+
 @-webkit-keyframes rubberBand {
     0% {
         -webkit-transform: scale3d(1, 1, 1);
