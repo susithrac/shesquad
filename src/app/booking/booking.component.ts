@@ -39,7 +39,7 @@ export class BookingComponent implements OnInit {
     const currentMonth = new Date().getMonth();
     const currentYear = new Date().getFullYear();
     this.minDate = new Date();
-    this.maxDate = new Date(currentYear, currentMonth, currentDate+6);
+    this.maxDate = new Date(currentYear, currentMonth, currentDate+1);
   }
 
   retrieveFloors() {
