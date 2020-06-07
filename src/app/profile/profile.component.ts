@@ -4,6 +4,7 @@ import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
 import {MatIconModule} from '@angular/material/icon';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { ActivatedRoute } from '@angular/router';
+import { BookingService } from '../booking.service';
 
 interface FoodNode {
   name: string;
@@ -41,6 +42,7 @@ export class ProfileComponent implements OnInit {
   panelOpenState = false;
 
   ngOnInit() {
+    console.log(this.bookingService.getProfileDetails());
   }
 
   private _transformer = (node: FoodNode, level: number) => {
@@ -59,7 +61,7 @@ export class ProfileComponent implements OnInit {
 
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
-  constructor( private route: ActivatedRoute) {
+  constructor( private route: ActivatedRoute, private bookingService: BookingService) {
     this.dataSource.data = TREE_DATA;
     const user = route.snapshot.paramMap.get('id');
     const data = route.snapshot.paramMap.get('empId');

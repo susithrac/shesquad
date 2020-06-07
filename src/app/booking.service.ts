@@ -17,6 +17,8 @@ export interface Desk {
 })
 export class BookingService {
 
+  profileData:any;
+
   constructor(private httpClient: HttpClient) { }
 
   getDesks(): Observable<Array<Desk>>{
@@ -24,6 +26,14 @@ export class BookingService {
   }
   manageBooking(obj): Observable<any>{
     return this.httpClient.post(environment.url+'/booking',obj);
+  }
+
+
+  setProfileDetails(data){
+    this.profileData=data;
+  }
+  getProfileDetails():any{
+    return this.profileData
   }
 
 }

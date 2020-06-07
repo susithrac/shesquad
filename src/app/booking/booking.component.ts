@@ -25,11 +25,16 @@ export class BookingComponent implements OnInit {
   employeeId: string;
   dateValue: any;
   floorValue:any;
+  emailId:string;
+  dept:string;
+  floorNumber:string;
 
   constructor(public snackBar: MatSnackBar,
     private route: ActivatedRoute, private bookingService:BookingService,private router: Router) {
     this.userName = route.snapshot.paramMap.get('id');
     this.employeeId = route.snapshot.paramMap.get('empId');
+    this.emailId = route.snapshot.paramMap.get('email');
+
     const currentDate = new Date().getDate();
     const currentMonth = new Date().getMonth();
     const currentYear = new Date().getFullYear();
@@ -59,6 +64,11 @@ export class BookingComponent implements OnInit {
         this.bookingService.getDesks().subscribe(data=>{
           this.desks = _.sortBy(data,'deskId');
           this.showBookingFun();
+          let profileObject={userName: this.userName, 
+            emailId: this.emailId, 
+            selectedDesk: this.selectedDesk
+          };
+          this.bookingService.setProfileDetails(profileObject);
         });
         this.floorValue="";
         this.dateValue="";
