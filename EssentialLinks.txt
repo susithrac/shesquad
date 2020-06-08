@@ -1,0 +1,15 @@
+Essential Links:
+	Git Repository of Node.js project:
+https://us-south.git.cloud.ibm.com/susithra.chandrabose/SheSquadNodejsExpress
+
+
+	Angular UI project:
+https://github.com/susithrac/shesquad
+
+
+	Link to Demo Video:
+https://photos.app.goo.gl/JPK1WmSpfFyUMrUz5
+
+
+Link to Web App:
+https://shesquadnodejsexpress.eu-gb.mybluemix.net/
